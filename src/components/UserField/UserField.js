@@ -43,7 +43,7 @@ function UserField({
           />
           <span id='email-error' className='user-field__error'></span>
         </label>
-        <label className='user-field__label'>Пароль
+        <label className='user-field__label user-field__label_margin'>Пароль
           <input
             type='password'
             className='user-field__input'
@@ -55,12 +55,31 @@ function UserField({
           <span className='user-field__error'></span>
         </label>
 
-        <button
+        {type === 'signup' && (
+          <button
+            className='user-field__submit-btn'
+            type='submit'
+          >
+            {btnName}
+          </button>
+        )}
+        {type === 'signin' && (
+          <button
+            className='user-field__submit-btnn'
+            type='submit'
+          >
+            {btnName}
+          </button>
+        )}
+
+
+
+        {/* <button
           className='user-field__submit-btn'
           type='submit'
         >
           {btnName}
-        </button>
+        </button> */}
         <p className='user-field__subtitle'>{subtitle}
           <Link to={linkTo} className='user-field__link'>{linkName}</Link>
         </p>

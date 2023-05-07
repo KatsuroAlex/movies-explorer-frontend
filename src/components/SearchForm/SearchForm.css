@@ -152,7 +152,7 @@
   }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 430px) {
   .search-form__input {
     line-height: 1.63;
     font-size: 11px;

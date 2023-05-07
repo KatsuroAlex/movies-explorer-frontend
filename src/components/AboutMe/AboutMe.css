@@ -1,6 +1,6 @@
 .about-me {
   margin: 0 auto;
-  padding: 13px 70px 100px 70px;
+  padding: 61px 70px 100px 70px;
   background-color: #fafafa;
   max-width: 100%;
 }
@@ -150,7 +150,7 @@
 
 @media screen and (max-width: 768px) {
   .about-me {
-    padding: 14px 50px 17px 50px;
+    padding: 64px 50px 17px 50px;
   }
   
   .about-me__text-title {
@@ -174,7 +174,7 @@
 
   .about-me__title {
     font-size: 18px;
-    line-height: 70px;
+    line-height: 72px;
     letter-spacing: -0.04em;
   }
 
