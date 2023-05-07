@@ -1,4 +1,5 @@
 .user-field {
+  max-width: 100%;
   margin: auto;
   padding: 70px 0;
   display: flex;
@@ -25,20 +26,22 @@
 }
 
 .user-field__label {
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   position: relative;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
   color: #A0A0A0;
+  display: grid;
+  row-gap: 9px;
 }
 
 .user-field__label:last-of-type {
-  margin-bottom: 113px;
+  margin-bottom: 97px;
 }
 
 .user-field__input {
-  padding: 5px 0 10px;
+  padding: 16px 0 12px 15px;
   font-style: inherit;
   color: #000;
   box-sizing: border-box;
@@ -121,9 +124,9 @@
     margin-top: 138px;
   }
 
-  .user-field__input {
+  /* .user-field__input {
     padding: 22px 14px 10px;
-  }
+  } */
 
   .user-field__label:last-of-type {
     margin-bottom: 95px;

@@ -21,11 +21,11 @@ function SearchForm() {
         <div className='search-form__filter-box'>
           <p className='search-form__filter-name'>Короткометражки</p>
           <label className='search-form__radio-switcher'>
-          <input className='search-form__radio-button search-form__radio-button_on'
+          <input className='search-form__radio-button search-form__radio-button_type_on'
               type='radio'
               value='on'
             />
-            <input className='search-form__radio-button search-form__radio-button_off'
+            <input className='search-form__radio-button search-form__radio-button_type_off'
               type='radio'
               value='off'
             />

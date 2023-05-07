@@ -22,7 +22,7 @@ function Header() {
           <li className="header__item">
             <button className="header__button" type="button">
               <Link
-                className="header__list-link header__list-link_button"
+                className="header__list-link header__list-link_type_button"
                 to="/signin"
               >
                 Войти

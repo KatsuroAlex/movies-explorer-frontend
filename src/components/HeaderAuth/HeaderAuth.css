@@ -74,10 +74,6 @@
   margin: 0px auto 0;
 }
 
-.header-auth__burger_active .header-auth__burger-menu-icon {
-  background-color: #FFFFFF;
-}
-
 .header-auth__burger-menu-box {
   display: flex;
   position: fixed;
@@ -147,7 +143,7 @@
   opacity: 0.5;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 811px) {
   .header-auth {
     padding: 0 30px;
   }
@@ -171,13 +167,13 @@
     display: flex;
   }
 
-  .header-auth__burger-account-link {
+  .header-auth__burger-redirect {
     display: flex;
     align-items: center;
     text-decoration: none;
   }
 
-  .header-auth__burger-account-link:hover {
+  .header-auth__burger-redirect:hover {
     opacity: 0.5;
   }
 

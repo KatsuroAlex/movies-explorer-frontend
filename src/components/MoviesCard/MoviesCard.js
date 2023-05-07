@@ -10,11 +10,14 @@ function MoviesCard() {
           <p className='movie-block__timelapse'>1ч 47мин</p>
         </div>
         <button
-          className='movie-block__button movie-block__save-button'
+          className='movie-block__button movie-block__button_type_save-button'
           type='button'
         />
       </div>
-      <a className='movie-block__link' href="1">
+      <a className='movie-block__link' 
+        href="/movies"
+        target="_blank"
+        rel="noopener noreferrer">
         <img className='movie-block__picture' src={image} alt='Фильм'/>
       </a>
     </section>

@@ -77,7 +77,7 @@ function HeaderAuth() {
             </ul>
           </nav>
           <div className="header-auth__burger-account">
-            <Link to="/profile" className="header-auth__burger-account-link">
+            <Link to="/profile" className="header-auth__burger-redirect">
               <span className="header-auth__burger-text">Аккаунт</span>
               <img
                 className="header-auth__burger-icon"

@@ -11,6 +11,8 @@ function Portfolio() {
           <a
             className="portfolio__link"
             href="https://github.com/KatsuroAlex?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <p className="portfolio__subtitle">Статичный сайт</p>
             <img className="portfolio__icon" src={icon} alt="Стрелка" />
@@ -20,6 +22,8 @@ function Portfolio() {
           <a
             className="portfolio__link"
             href="https://github.com/KatsuroAlex/russian-travel"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <p className="portfolio__subtitle">Адаптивный сайт</p>
             <img className="portfolio__icon" src={icon} alt="Стрелка" />
@@ -29,6 +33,8 @@ function Portfolio() {
           <a
             className="portfolio__link"
             href="https://github.com/KatsuroAlex/react-mesto-api-full-gha"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <p className="portfolio__subtitle">Одностраничное приложение</p>
             <img className="portfolio__icon" src={icon} alt="Стрелка" />

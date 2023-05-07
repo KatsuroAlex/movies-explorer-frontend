@@ -64,12 +64,12 @@
   background-color: #3456f3;
 }
 
-.movie-block__save-button {
+.movie-block__button_type_save-button {
   background-size: 10px 13px;
   background-image: url('../../images/flag.svg');
 }
 
-.movie-block__save-button:hover {
+.movie-block__button_type_save-button:hover {
   background-image: url('../../images/movie_icon_active.svg');
 }
 

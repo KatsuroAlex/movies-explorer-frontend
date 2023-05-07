@@ -8,16 +8,16 @@ function Promo() {
     <section className='promo'>
         <h1 className='promo__title'>Учебный проект студента факультета Веб-разработки.</h1>
         <img className="promo__logo" src={image} alt="Логотип"></img>
-      <nav className='navigation'>
-        <ul className='navigation__list'>
-          <li className='navigation__item'>
-            <a className='navigation__link' href='#project'>О проекте</a>
+      <nav className='promo__navigation'>
+        <ul className='promo__navigation-list'>
+          <li className='promo__navigation-item'>
+            <a className='promo__navigation-link' href='#project'>О проекте</a>
           </li>
-          <li className='navigation__item'>
-            <a className='navigation__link' href='#techs'>Технологии</a>
+          <li className='promo__navigation-item'>
+            <a className='promo__navigation-link' href='#techs'>Технологии</a>
           </li>
-          <li className='navigation__item'>
-            <a className='navigation__link' href='#student'>Студент</a>
+          <li className='promo__navigation-item'>
+            <a className='promo__navigation-link' href='#student'>Студент</a>
           </li>
         </ul>
       </nav>

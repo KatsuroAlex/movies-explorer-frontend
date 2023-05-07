@@ -17,14 +17,14 @@ function AboutProject() {
         </li>
         <li className="about-project__info-item">
           <h3 className="about-project__info-title">На выполнение диплома ушло 5 недель</h3>
-          <p className="about-project__info-content about-project__info-content_last">
+          <p className="about-project__info-content about-project__info-content_type_last">
             У каждого этапа был мягкий и жесткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.
           </p>
         </li>
       </ul>
       <ul className="about-project__time">
         <li className="about-project__time-item">
-          <p className="about-project__time-title about-project__time-title_backend">
+          <p className="about-project__time-title about-project__time-title_type_backend">
             1 неделя
           </p>
           <p className="about-project__time-subtitle">Back-end</p>

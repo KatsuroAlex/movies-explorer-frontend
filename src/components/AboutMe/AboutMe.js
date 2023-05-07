@@ -22,7 +22,10 @@ function AboutMe() {
           </p>
           <ul className="about-me__list">
             <li className="about-me__item">
-              <a className="about-me__link" href="https://github.com/KatsuroAlex">
+              <a className="about-me__link" 
+                href="https://github.com/KatsuroAlex" 
+                target="_blank"
+                rel="noopener noreferrer">
                 Github
               </a>
             </li>

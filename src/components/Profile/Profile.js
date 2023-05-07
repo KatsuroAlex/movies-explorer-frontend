@@ -34,13 +34,13 @@ function Profile() {
           </label>
 
             <button
-              className='profile__button profile__button_change-data'
+              className='profile__button profile__button_type_change-data'
               type='button'
             >
               Редактировать
             </button>
             <button
-              className='profile__button profile__button_logout'
+              className='profile__button profile__button_type_logout'
               type='button'
             >
               Выйти из аккаунта

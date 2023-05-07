@@ -71,12 +71,12 @@
   background-color: transparent;
 }
 
-.profile__button_change-data {
+.profile__button_type_change-data {
   margin-top: 197px;
   margin-bottom: 16px;
 }
 
-.profile__button_logout {
+.profile__button_type_logout {
   color: #FF4062;
   font-weight: 500;
 }
@@ -126,7 +126,7 @@
     margin-bottom: 191px;
   }
 
-  .profile__button_change-data {
+  .profile__button_type_change-data {
     margin-top: 0;
   }
 }

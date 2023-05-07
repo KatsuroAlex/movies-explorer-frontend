@@ -150,7 +150,7 @@
 
 @media screen and (max-width: 768px) {
   .about-me {
-    padding: 20px 50px;
+    padding: 14px 50px 17px 50px;
   }
   
   .about-me__text-title {
@@ -167,7 +167,7 @@
   }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 430px) {
   .about-me {
     padding: 0px 14px;
   }
