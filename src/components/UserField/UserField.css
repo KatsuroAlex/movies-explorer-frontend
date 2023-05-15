@@ -36,11 +36,6 @@
   row-gap: 11px;
 }
 
-/* .user-field__label:last-of-type {
-  margin-bottom: 178px;
-} */
-
-
 .user-field__input {
   padding: 15px 0 15px 15px;
   font-style: inherit;
@@ -70,7 +65,7 @@
   line-height: 12px;
   color: #FF4062;
   position: absolute;
-  top: 46px;
+  top: 70px;
   left: 0;
 }
 
@@ -137,14 +132,6 @@
   .user-field__login-btn {
     margin-top: 138px;
   }
-
-  /* .user-field__input {
-    padding: 22px 14px 10px;
-  } */
-
-  /* .user-field__label:last-of-type {
-    margin-bottom: 95px;
-  } */
 }
 
 @media screen and (max-width: 675px){
@@ -181,10 +168,6 @@
     font-size: 12px;
     line-height: 15px;
   }
-
-  /* .user-field__label:last-of-type {
-    margin-bottom: 0;
-  } */
 
   .user-field__label {
     margin-bottom: 21px;

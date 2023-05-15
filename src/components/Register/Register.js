@@ -1,6 +1,6 @@
 import UserField from '../UserField/UserField';
 
-function Register(){
+function Register({ onRegister }){
 
   return (
     <UserField
@@ -10,6 +10,7 @@ function Register(){
       btnName='Зарегистрироваться'
       subtitle='Уже зарегистрированы?'
       linkName='Войти'
+      onSubmit={onRegister}
     >
     </UserField>
   );

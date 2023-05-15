@@ -44,9 +44,6 @@
   font-size: 14px;
 }
 
-
-
-
 .about-project__time {
   margin: 0;
   padding: 0;
@@ -134,9 +131,6 @@
   }
 }
 
-
-
-
 @media screen and (max-width: 415px) {
   .about-project {
     padding: 70px 18px;
@@ -175,15 +169,8 @@
     grid-template-columns: 35% 65%;
   }
 
-  /* .about-project__time-title {
-    font-size: 11px;
-    line-height: 13px;
-  } */
-
   .about-project__time-subtitle {
     margin: 7px 0 0 0;
-    /* font-size: 11px;
-    line-height: 13px; */
   }
 }
 

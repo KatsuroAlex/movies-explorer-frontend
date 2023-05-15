@@ -1,6 +1,6 @@
 import UserField from "../UserField/UserField";
 
-function Login() {
+function Login({ onLogin }) {
 
   return (
       <UserField
@@ -10,6 +10,7 @@ function Login() {
         btnName='Войти'
         subtitle='Ещё не зарегистрированы?'
         linkName='Регистрация'
+        onSubmit={onLogin}
       />
   );
 };
