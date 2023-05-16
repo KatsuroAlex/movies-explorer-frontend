@@ -2,9 +2,8 @@ import React, { useState, useEffect} from 'react';
 import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import MoviesApi from '../../utils/MoviesApi';
+import * as moviesApi from  '../../utils/MoviesApi';
 import { filterShortMovies, filterMovies } from '../hooks/FilterMovies';
-
 
 function Movies({ onLikeClick, savedMoviesList, onDeleteClick }) {
   const forCheckbox = localStorage.getItem('shortFilms') === 'on' ? 'on' : 'off';
@@ -37,7 +36,7 @@ function Movies({ onLikeClick, savedMoviesList, onDeleteClick }) {
     localStorage.setItem('shortFilms', shortFilms);
     
     if (!allMovies.length) {
-      MoviesApi.getMovies()
+      moviesApi.getMovies()
         .then((data) => {
           updateMoviesWithUrls(data);
           setAllMovies(data);

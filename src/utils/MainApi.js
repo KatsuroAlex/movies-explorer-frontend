@@ -6,6 +6,7 @@ class MainApi {
     headers
   }) {
     this._baseUrl = baseUrl;
+    this._userUrl = `${this._baseUrl}/users/me`;
     this._moviesUrl = `${this._baseUrl}/movies`;
     this._token = headers['authorization'];
   };
@@ -64,7 +65,7 @@ class MainApi {
   };
 
   getUserData() {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(this._userUrl, {
       method: "GET",
       headers: {
         authorization: this._token,
@@ -75,7 +76,7 @@ class MainApi {
   };
 
   updateUserProfile(name, email) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(this._userUrl, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

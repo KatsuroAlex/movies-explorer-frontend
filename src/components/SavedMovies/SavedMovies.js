@@ -34,11 +34,9 @@ function SavedMovies({ list, onDeleteClick, isError }) {
         onSearchClick={handleSubmit}
         onCheckbox={handleSwitcher}
         shortFilms={shortFilms}
-        savedMoviesPage={true}
       />
       <MoviesCardList 
         list={filteredMovies}
-        savedMoviesPage={true}
         onDelete={onDeleteClick}
         isEmptyList={notFound}
         isError={isError}/>

@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import Header from "../Header/Header";
 import HeaderAuth from "../HeaderAuth/HeaderAuth";
 import Footer from '../Footer/Footer';
@@ -12,7 +13,6 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PageNotFound from '../PageNotFound/PageNotFound.js';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import mainApi from '../../utils/MainApi';
 
 
@@ -23,9 +23,14 @@ function App() {
   const [isError, setIsError] = useState(false);
   const [myMovies, setMyMovies] = useState([]);
 
+  function handleLoggedIn() {
+    setLoggedIn(true);
+  };
+
   useEffect(() => {
     mainApi.getUserData()
       .then(data => {
+        console.log(data);
         handleLoggedIn();
         setCurrentUser(data);
       })
@@ -34,9 +39,7 @@ function App() {
       })
   }, [loggedIn]);
 
-  function handleLoggedIn() {
-    setLoggedIn(true);
-  };
+
 
   useEffect(() => {
     if(loggedIn){
@@ -57,10 +60,11 @@ function App() {
       .then(data => {
         if(data){
           console.log(data);
-          handleLoggedIn(data.email, password);
+          handleUserLogin(data.email, password);
         } 
       })
       .catch(err => {
+        setIsError(true);
         console.log(err);
       })
   };
@@ -72,6 +76,7 @@ function App() {
         navigate('/movies');
       })
       .catch(err => {
+        setIsError(true);
         console.log(err);
       })
   };
@@ -89,16 +94,17 @@ function App() {
       })
   };
 
-    function editProfile(name, email) {
-      mainApi.updateUserProfile(name, email)
-        .then(data => {
-          console.log(data);
-          setCurrentUser(data);
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    };
+  function editProfile(name, email) {
+    mainApi.updateUserProfile(name, email)
+      .then(data => {
+        console.log(data);
+        setCurrentUser(data);
+      })
+      .catch(err => {
+        setIsError(true);
+        console.log(err);
+      })
+  };
 
   function handleSaveMovie(movie){
     mainApi.saveNewMovie(movie)
