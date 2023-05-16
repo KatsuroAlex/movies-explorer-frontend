@@ -33,12 +33,14 @@ function SavedMovies({ list, onDeleteClick, isError }) {
       <SearchForm 
         onSearchClick={handleSubmit}
         onCheckbox={handleSwitcher}
+        savedMoviesPage={true}
         shortFilms={shortFilms}
       />
       <MoviesCardList 
         list={filteredMovies}
         onDelete={onDeleteClick}
         isEmptyList={notFound}
+        savedMoviesPage={true}
         isError={isError}/>
     </section>
   );
