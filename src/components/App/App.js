@@ -44,6 +44,7 @@ function App() {
     if(loggedIn){
       mainApi.getUsersMovies()
       .then((data) => {
+        console.log(data);
         setMyMovies(data);
         setIsError(false);
       })
@@ -54,49 +55,24 @@ function App() {
     }
   }, [loggedIn]);
 
-  // function handleUserRegister(name, email, password){
-  //   mainApi.register(name, email, password)
-  //     .then(data => {
-  //       if(data){
-  //         handleUserLogin(data.email, password);
-  //       }   
-  //     })
-  //     .catch(err => {
-  //       setIsError(true);
-  //       console.log(err);
-  //     })
-  // };
-
-  function handleUserRegister(name, email, password) {
+  function handleUserRegister(name, email, password){
     mainApi.register(name, email, password)
       .then(data => {
-        if (data) {
-          handleUserLogin(data.email, password)
-            .then(() => {
-              mainApi.getUserData()
-                .then(data => {
-                  handleLoggedIn();
-                  setCurrentUser(data);
-                })
-                .catch(err => {
-                  console.log(err);
-                })
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        }
+        console.log(data);
+        if(data){
+          handleUserLogin(data.email, password);
+        }   
       })
       .catch(err => {
         setIsError(true);
         console.log(err);
       })
-  }
-
+  };
 
   function handleUserLogin(email, password) {
     mainApi.login(email, password)
       .then(res => {
+        console.log(res);
         handleLoggedIn();
         navigate('/movies');
       })
