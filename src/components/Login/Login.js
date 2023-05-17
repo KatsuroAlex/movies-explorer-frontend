@@ -5,7 +5,7 @@ function Login({ onLogin }) {
   return (
       <UserField
         type='signin'
-        linkTo='signup'
+        linkTo='/signup'
         title='Рады видеть!'
         btnName='Войти'
         subtitle='Ещё не зарегистрированы?'

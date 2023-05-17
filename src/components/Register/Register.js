@@ -5,7 +5,7 @@ function Register({ onRegister }){
   return (
     <UserField
       type='signup'
-      linkTo='signin'
+      linkTo='/signin'
       title='Добро пожаловать!'
       btnName='Зарегистрироваться'
       subtitle='Уже зарегистрированы?'
