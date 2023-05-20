@@ -16,5 +16,23 @@ export function useFormValidation() {
     setIsValid(input.closest('form').checkValidity());
   };
 
-  return {values, errors, isValid, handleChange, setValues, setIsValid, setErrors};
+  function validateEmail(email) {
+    const emailPattern = /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return emailPattern.test(email);
+  }
+
+  function validateForm() {
+    const newErrors = {};
+    let formIsValid = true;
+
+    if (!values.email || !validateEmail(values.email)) {
+      newErrors.email = 'Поле должно содержать email в формате "email@email.ru"';
+      formIsValid = false;
+    }
+
+    setErrors(newErrors);
+    setIsValid(formIsValid);
+  }
+
+  return { values, errors, isValid, handleChange, validateForm, setValues, setIsValid, setErrors};
 };
