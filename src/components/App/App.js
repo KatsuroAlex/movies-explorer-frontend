@@ -16,12 +16,18 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import mainApi from '../../utils/MainApi';
 
 
+
 function App() {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const [myMovies, setMyMovies] = useState([]);
+  const [infoMessage, setInfoMessage] = useState({
+    isShown: false,
+    message: '',
+    code: 200,
+  });
 
   function handleLoggedIn() {
     setLoggedIn(true);
@@ -30,7 +36,6 @@ function App() {
   useEffect(() => {
     mainApi.getUserData()
       .then(data => {
-        console.log(data);
         handleLoggedIn();
         setCurrentUser(data);
       })
@@ -44,7 +49,6 @@ function App() {
     if(loggedIn){
       mainApi.getUsersMovies()
       .then((data) => {
-        console.log(data);
         setMyMovies(data);
         setIsError(false);
       })
@@ -58,7 +62,6 @@ function App() {
   function handleUserRegister(name, email, password){
     mainApi.register(name, email, password)
       .then(data => {
-        console.log(data);
         if(data){
           handleUserLogin(data.email, password);
         }   
@@ -100,10 +103,22 @@ function App() {
       .then(data => {
         console.log(data);
         setCurrentUser(data);
+        setInfoMessage({
+          ...infoMessage,
+          isShown: true,
+          type: 'profile',
+        });
       })
-      .catch(err => {
-        setIsError(true);
-        console.log(err);
+      .catch(({ message, statusCode }) => {
+        
+        console.log({ message, statusCode })
+        setInfoMessage({
+          ...infoMessage,
+          isShown: true,
+          message,
+          code: statusCode,
+          type: 'profile',
+        });
       })
   };
 
@@ -124,10 +139,22 @@ function App() {
       .catch(err => console.log(err))
   };
 
+  function handleClickResetInfoMessage() {
+    if (infoMessage.isShown){
+      setInfoMessage({
+        ...infoMessage,
+        isShown: false,
+        message: '',
+        type: '',
+        code: 200,
+      });
+    }
+  };
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div className='app'>    
-      
+      <div className='app' onClick={infoMessage.isShown ? handleClickResetInfoMessage : null}>    
+
         <Routes>
           <Route exact path="/"
             element={
@@ -188,6 +215,7 @@ function App() {
                   list={myMovies}
                   onDeleteClick={handleDeleteMovie}
                   isError={isError}
+                  infoMessage={infoMessage}
                 />
                 <Footer />
               </ProtectedRoute>
@@ -203,6 +231,8 @@ function App() {
                     isLogin={loggedIn}
                     onSignOut={handleUserSignOut}
                     editProfile={editProfile}
+                    infoMessage={infoMessage}
+
                   />
                 </ProtectedRoute>
               }
@@ -215,3 +245,18 @@ function App() {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -88,7 +88,10 @@ class MainApi {
         email,
       })
     })
-    .then(this._getResponseData);
+    // .then(this._getResponseData);
+    .then(res => {
+      return res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
+    })
   };
 
   getUsersMovies() {

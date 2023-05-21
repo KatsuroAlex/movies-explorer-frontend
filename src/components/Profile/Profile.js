@@ -2,12 +2,13 @@ import './Profile.css';
 import React, { useContext, useState, useEffect } from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { useFormValidation } from '../hooks/useFormValidation';
+import InfoMessage from '../InfoMessage/InfoMessage';
 
 
-function Profile({ onSignOut, editProfile }) {
+function Profile({ onSignOut, editProfile, infoMessage }) {
 
   const currentUser = useContext(CurrentUserContext);
-  const {values, errors, isValid, handleChange, setValues, setIsValid} = useFormValidation();
+  const {values, errors, isValid, handleChange, setValues, setIsValid, validateForm} = useFormValidation();
   const [activeInput, setActiveInput] = useState(false);
 
   useEffect(() => {
@@ -25,8 +26,10 @@ function Profile({ onSignOut, editProfile }) {
     }
   }, [setIsValid, values, currentUser]);
 
+
   function handleSubmit(e) {
     e.preventDefault();
+    validateForm();
     editProfile(values.name, values.email);
   };
 
@@ -67,11 +70,14 @@ function Profile({ onSignOut, editProfile }) {
               value={values.email || ''}
               onChange={handleChange}
               id='email'
+              pattern="[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
             />
             <span id='email-error' className='profile__error'>
               {errors.email ? 'Поле не может быть пустым и должно содержать email' : ''}
             </span>
           </label>
+
+          <InfoMessage {...infoMessage} />
 
           {activeInput ? (
             <>
