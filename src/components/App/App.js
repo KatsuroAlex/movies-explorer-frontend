@@ -166,6 +166,10 @@ function App() {
             }
           ></Route>
           <Route
+            path="/"
+            element={loggedIn ? <Navigate to="/movies" /> : <Navigate to="/signin" />}
+          ></Route>
+          <Route
               exact
               path="/signin"
               element={
