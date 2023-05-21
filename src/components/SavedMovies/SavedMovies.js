@@ -9,10 +9,10 @@ function SavedMovies({ list, onDeleteClick, isError }) {
   const [shortFilms, setShortFilms] = useState('off');
   const [filteredMovies, setFilteredMovies] = useState(list);
   const [notFound, setIsNotFound] = useState(false);
-  
+
   function handleSubmit(value) {
     setSearchQuery(value);
-    const resultList = filterMovies(list, searchQuery, shortFilms);
+    const resultList = filterMovies(list, value, shortFilms);
     setFilteredMovies(resultList);
   };
 
