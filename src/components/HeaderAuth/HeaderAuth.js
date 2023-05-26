@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import icon from "../../images/icon__COLOR_icon-main.svg";
 import menuIcon from "../../images/icon__COLOR_icon-main.png"
@@ -9,13 +9,14 @@ import Navigation from "../Navigation/Navigation";
 
 function HeaderAuth() {
   const [activeMenu, setActiveMenu] = useState(false);
+  const { pathname } = useLocation();
 
   function handleActiveMenu() {
     setActiveMenu(!activeMenu);
   }
 
   return (
-    <header className="header-auth">
+    <header className={`header-auth ${pathname === "/" ? "header-auth_main" : ""}`}>
       <div className="header-auth__container">
         <Link className="header-auth__link" to="/">
           <img className="header-auth__logo" src={logo} alt="Логотип" />

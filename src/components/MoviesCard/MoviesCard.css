@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: 364px;
+  max-height: 271px;
+  max-width: 364px;
   box-sizing: border-box;
   overflow: hidden;
   background-color: #FDFDFD;
@@ -73,6 +74,11 @@
   background-image: url('../../images/movie_icon_active.svg');
 }
 
+.movie-block__save-button_active{
+  background-image: url('../../images/movie_icon_active.svg');
+  background-color: #3456f3;
+}
+
 .movie-block__picture {
   display: block;
   position: relative;
@@ -80,6 +86,11 @@
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+}
+
+.movie-block__button_type_delete-button{
+  background-size: 8px;
+  background-image: url('../../images/delete-btn.svg');
 }
 
 @media screen and (max-width: 650px) {

@@ -69,6 +69,7 @@
   line-height: 1.23;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .profile__button_type_change-data {
