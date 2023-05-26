@@ -1,0 +1,42 @@
+.navigation-movies{
+  margin-top: auto;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0;
+  position: relative;
+}
+
+.navigation-movies__list {
+  display: flex;
+  column-gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.navigation-movies__list-item {
+  list-style: none;
+}
+
+.navigation-movies__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000;
+  text-decoration: none;
+  /* text-align: right; */
+}
+
+.navigation-movies__link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 811px) {
+  .navigation-movies {
+    display: none;
+  }
+}
